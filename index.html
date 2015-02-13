@@ -59,6 +59,15 @@
 <a id="hadoop-architecture" class="anchor" href="#hadoop-architecture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hadoop Architecture</h2>
 
 <p>Hadoop consists of the Hadoop Common package, which provides filesystem and OS level abstractions, a MapReduce engine (either MapReduce/MR1 or YARN/MR2) and the Hadoop Distributed File System (HDFS). The Hadoop Common package contains the necessary Java ARchive (JAR) files and scripts needed to start Hadoop. The package also provides source code, documentation, and a contribution section that includes projects from the Hadoop Community.</p>
+
+<h2>
+<a id="what-is-hadoop-cluster" class="anchor" href="#what-is-hadoop-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Hadoop Cluster?</h2>
+
+<p>A small Hadoop cluster includes a single master and multiple worker nodes. The master node consists of a JobTracker, TaskTracker, NameNode and DataNode. A slave or worker node acts as both a DataNode and TaskTracker, though it is possible to have data-only worker nodes and compute-only worker nodes. </p>
+
+<p>These are normally used only in nonstandard applications. Hadoop requires Java Runtime Environment (JRE) 1.6 or higher. The standard startup and shutdown scripts require that Secure Shell (ssh) be set up between nodes in the cluster.</p>
+
+<p>In a larger cluster, the HDFS is managed through a dedicated NameNode server to host the file system index, and a secondary NameNode that can generate snapshots of the namenode's memory structures, thus preventing file-system corruption and reducing loss of data. Similarly, a standalone JobTracker server can manage job scheduling. In clusters where the Hadoop MapReduce engine is deployed against an alternate file system, the NameNode, secondary NameNode, and DataNode architecture of HDFS are replaced by the file-system-specific equivalents.</p>
       </section>
     </div>
 

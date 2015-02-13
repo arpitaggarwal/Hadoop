@@ -40,6 +40,8 @@
 
 <p>Hadoop splits files into large blocks (default 64MB or 128MB) and distributes the blocks amongst the nodes in the cluster. To process the data, Hadoop Map/Reduce transfers code (specifically Jar files) to nodes that have the required data, which the nodes then process in parallel. This approach takes advantage of data locality to allow the data to be processed faster and more efficiently via distributed processing than by using a more conventional supercomputer architecture that relies on a parallel file system where computation and data are connected via high-speed networking.</p>
 
+<p>The Hadoop framework itself is mostly written in the Java programming language, with some native code in C and command line utilities written as shell-scripts. For end-users, though MapReduce Java code is common, any programming language can be used with "Hadoop Streaming" to implement the "map" and "reduce" parts of the user's program.[11] Other related projects expose other higher level user interfaces.</p>
+
 <p>The base Apache Hadoop framework is composed of the following modules:</p>
 
 <ul>

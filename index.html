@@ -158,9 +158,13 @@ join cluster automatically.</li>
 <p>The allocation of work to TaskTrackers is very simple. Every TaskTracker has a number of available slots (such as "4 slots"). Every active map or reduce task takes up one slot. The Job Tracker allocates work to the tracker nearest to the data with an available slot. There is no consideration of the current system load of the allocated machine, and hence its actual availability.
 If one TaskTracker is very slow, it can delay the entire MapReduce job – especially towards the end of a job, where everything can end up waiting for the slowest task. With speculative execution enabled, however, a single task can be executed on multiple slave nodes.</p>
 
-<p><strong>Scheduling</strong></p>
+<p><strong>Scheduling</strong>
+By default Hadoop uses FIFO, and optionally 5 scheduling priorities to schedule jobs from a work queue. In version 0.19 the job scheduler was refactored out of the JobTracker, while adding the ability to use an alternate scheduler (such as the Fair scheduler or the Capacity scheduler).</p>
 
-<p>By default Hadoop uses FIFO, and optionally 5 scheduling priorities to schedule jobs from a work queue. In version 0.19 the job scheduler was refactored out of the JobTracker, while adding the ability to use an alternate scheduler (such as the Fair scheduler or the Capacity scheduler).</p>
+<h2>
+<a id="whats-common-across-hadoop-problems" class="anchor" href="#whats-common-across-hadoop-problems" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's common across Hadoop problems?</h2>
+
+<p>It's nature of data :  Volume , Velocity and Variety.</p>
       </section>
     </div>
 

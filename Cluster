@@ -1,1 +1,95 @@
-Hello
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Hadoop-Cluster : Hadoop Cluster">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Hadoop-Cluster</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/arpitaggarwal/Hadoop-Cluster">View on GitHub</a>
+
+          <h1 id="project_title">Hadoop-Cluster</h1>
+          <h2 id="project_tagline">Hadoop Cluster</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/arpitaggarwal/Hadoop-Cluster/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/arpitaggarwal/Hadoop-Cluster/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a id="what-is-hadoop-cluster" class="anchor" href="#what-is-hadoop-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Hadoop Cluster?</h2>
+
+<p>Hadoop cluster is a group of computers working together. Usually runs "HDFS" and "MapReduce". A node is an individual computer in the cluster.Master nodes manage distribution of work and data to slave nodes. A daemon is a program running on a node.</p>
+
+<h2>
+<a id="hadoop-daemons" class="anchor" href="#hadoop-daemons" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hadoop Daemons</h2>
+
+<p>It's grouped into 2 : HDFS and MapReduce.</p>
+
+<h3>
+<a id="hdfs-daemons" class="anchor" href="#hdfs-daemons" aria-hidden="true"><span class="octicon octicon-link"></span></a>HDFS daemons</h3>
+
+<ol>
+<li>NameNode – holds the metadata for HDFS. Typically two on a production cluster: one active, one standby.</li>
+<li>DataNode – holds the actual HDFS data. One per slave node.</li>
+</ol>
+
+<h3>
+<a id="mapreduce-daemons" class="anchor" href="#mapreduce-daemons" aria-hidden="true"><span class="octicon octicon-link"></span></a>MapReduce daemons</h3>
+
+<p>It's grouped into 2 : MapReduce 1 and MapReduce 2.</p>
+
+<p><strong>MapReduce 1 (MRv1 or "Classic MapReduce")</strong></p>
+
+<ul>
+<li>It uses a "JobTracker/TaskTracker" architecture.</li>
+<li>One "JobTracker" per cluster and also limits cluster size to about 4000 nodes.</li>
+<li>It uses Slots on slave nodes designated for Map or Reduce tasks.</li>
+</ul>
+
+<p><strong>MapReduce 2 (MRv2)</strong></p>
+
+<ul>
+<li>It uses a "ResourceManager/NodeManager" architecture.</li>
+<li>Built on top of "YARN"(Yet"Another"Resource"Negotiator) which increases scalability of cluster. Cluster nodes or<br>
+resources can be used for any type of task, which further improves cluster utilization.</li>
+<li>Provided support for non-MapReduce jobs.</li>
+</ul>
+
+<p><img src="http://media.bestofmicro.com/X/8/430172/original/yarn.png" alt="MapReduce"></p>
+
+<h2>
+<a id="how-mrv2-provided-support-for-non-mapreduce-jobs" class="anchor" href="#how-mrv2-provided-support-for-non-mapreduce-jobs" aria-hidden="true"><span class="octicon octicon-link"></span></a>How MRv2 provided support for non-MapReduce jobs?</h2>
+
+<p><img src="http://www.kdnuggets.com/wp-content/uploads/hadoop-native-applications.jpg" alt=""></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Hadoop-Cluster maintained by <a href="https://github.com/arpitaggarwal">arpitaggarwal</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

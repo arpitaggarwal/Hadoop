@@ -1,0 +1,49 @@
+##Hadoop Ecosystem
+
+![Hadoop Ecosystem](http://thebigdatablog.weebly.com/uploads/3/2/3/2/32326475/87375_orig.jpg)
+
+
+Most Hadoop Ecosystem Projects are Apache projects or Apache Incubator projects and may be:
+* Built on HDFS and MapReduce - Pig, Hive.
+* Built on just HDFS - Impala by Cloudera.
+* Designed to integrate with or support Hadoop.
+
+###Hive and Pig
+* Both languages are used for querying and manipulating data.
+* Interpreter runs on a client machine.
+* Turns queries to MapReduce jobs, which is further submitted to cluster.
+
+**Hive** - It's similar to SQL.
+
+**Pig** - It's dataflow scripting language.
+
+###Impala
+* High performance SQL engine for vast amounts of data.
+* Similar query language to "HiveQL".
+* 10 to 50+ times faster than Hive, Pig, or MapReduce as it runs directly on Hadoop clusters and do not use MapReduce.
+* Use data stored in HDFS.
+* It's developed by Cloudera and 100%"open source, released under the  Apache software license.
+
+###Flume
+* Flume imports data into HDFS as it is generated usually log files from a Web Server, instead of batch processing it later.
+
+###Sqoop - "SQL to Hadoop"
+* Sqoo transfers data between RDBMS and HDFS. It does this very efficiently via a Map/only MapReduce job.
+* It supports JDBC, ODBC, and several specific databases.
+
+
+###OOzie
+* It's a workflow engine for MapReduce jobs and also defines dependencies between jobs.
+* Oozie server submits the jobs to the server in the correct sequence.
+
+###HBase
+* HBase is the Hadoop column oriented database.
+* Its a "NoSQL" datastore and can store massive amount of data.
+* have high write throughput and scale to hundreds of thousands o inserts per second.
+* Handles sparse data well with no wasted spaces for empty columns in a row.
+* It have a limited access model and optimized for lookup of a row by key rather than full queries.
+* No support for transactions - Single row operations only.
+
+###Mahout - An Elephant Rider
+* Mahout is a Machine Learning library written in Java.
+* Used for Collaborative filtering (recommendations), Clustering (finding naturally occurring groupings in data), Classification (determining whether new data fits a category).

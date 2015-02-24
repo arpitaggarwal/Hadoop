@@ -1,82 +1,157 @@
-![Hadoop Ecosystem](http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/7848.TheHadoopEcosystem.png?raw=true?raw=true)
+<!DOCTYPE html>
+<html>
 
-**HDFS** - Stores data on the cluster.
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Hadoop-Components : Hadoop Components">
 
-**MapReduce** - Processes data on the cluster. 
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-###Hadoop Cluster
-A group of machines working together to store and process data. It can have any number of "slave" or "worker" nodes with 2 master nodes:
+    <title>Hadoop-Components</title>
+  </head>
 
-1. Name Node - Manages HDFS.
-1. Job Tracker - Manages MapReduce.
+  <body>
 
-![Hadoop Cluster](http://www.ibm.com/developerworks/library/bd-hadoopyarn/figure1.png)
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/arpitaggarwal/Hadoop-Components">View on GitHub</a>
 
+          <h1 id="project_title">Hadoop-Components</h1>
+          <h2 id="project_tagline">Hadoop Components</h2>
 
-##HDFS?
-1. HDFS is a filesystem written in Java.
-1. It's based on Google File System.
-1. Sits on native filesystem such as ext3, ext4 or xfs.
-1. Provides redundant storage for massive amounts of data. 
-1. It performs best with a "modest" number of large files. Each file typically 100MB or more.
-1. Files in HDFS are "write once" - No random rights to file are allowed.
-1. It is optimized for large, streaming reads of files, rather than random reads.
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/arpitaggarwal/Hadoop-Components/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/arpitaggarwal/Hadoop-Components/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-###How files are stored?
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><img src="http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/7848.TheHadoopEcosystem.png?raw=true?raw=true" alt="Hadoop Ecosystem"></p>
 
-Each data file is splitted into block on multiple nodes at data load time. Each block is replicated on multiple nodes (DataNode) default 3x and NameNode is used to store metadata.
+<p><strong>HDFS</strong> - Stores data on the cluster.</p>
 
-![Writing File to HDFS](http://bradhedlund.s3.amazonaws.com/2011/hadoop-network-intro/Writing-Files-to-HDFS.PNG)
+<p><strong>MapReduce</strong> - Processes data on the cluster. </p>
 
+<h3>
+<a id="hadoop-cluster" class="anchor" href="#hadoop-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hadoop Cluster</h3>
 
-###HDFS NameNode availability
-NameNode daemon must be running at all times. If NameNode stops, cluster become inaccessible.
+<p>A group of machines working together to store and process data. It can have any number of "slave" or "worker" nodes with 2 master nodes:</p>
 
-###How to access HDFS?
+<ol>
+<li>Name Node - Manages HDFS.</li>
+<li>Job Tracker - Manages MapReduce.</li>
+</ol>
 
-* FsShell Command line : hadoop fs
-* JAVA API
-* Ecosystem Projects
-    Flume -  Collect data from network sources e.g System logs.
-    Sqoop -  Transfers data between HDFS and RDBMS.
-    Hue - Web based interactive UI. Can"browse,"upload," download,"and"view"files".
+<p><img src="http://www.ibm.com/developerworks/library/bd-hadoopyarn/figure1.png" alt="Hadoop Cluster"></p>
 
-##MapReduce
-MapReduce is a method of distributing a task over multiple nodes. Each node is responsible to process data stored on that node. It consist of 2 phases:
+<h2>
+<a id="hdfs" class="anchor" href="#hdfs" aria-hidden="true"><span class="octicon octicon-link"></span></a>HDFS?</h2>
 
-1. Map
-1. Reduce
+<ol>
+<li>HDFS is a filesystem written in Java.</li>
+<li>It's based on Google File System.</li>
+<li>Sits on native filesystem such as ext3, ext4 or xfs.</li>
+<li>Provides redundant storage for massive amounts of data. </li>
+<li>It performs best with a "modest" number of large files. Each file typically 100MB or more.</li>
+<li>Files in HDFS are "write once" - No random rights to file are allowed.</li>
+<li>It is optimized for large, streaming reads of files, rather than random reads.</li>
+</ol>
 
-###Features of MapReduce
-1. Automatic parallelization and distribution.
-1. Fault tolerance.
-1. A clean abstraction for programmers. MapReduce "programs" are usually written in Java but can be written in any language 
-   using **"Hadoop Streaming"**. All of Hadoop is written in Java.
-1. It makes Developer can simply concentrate on writing the "Map" and "Reduce" functions.
+<h3>
+<a id="how-files-are-stored" class="anchor" href="#how-files-are-stored" aria-hidden="true"><span class="octicon octicon-link"></span></a>How files are stored?</h3>
 
-###MapReduce Stages
+<p>Each data file is splitted into block on multiple nodes at data load time. Each block is replicated on multiple nodes (DataNode) default 3x and NameNode is used to store metadata.</p>
 
-![MapReduce Stages](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQmycmzO1vsDSut2tZvZ4v9UIjjJ7B5dr4-f9E1yXUqnH6EpdiwjQ)
+<p><img src="http://bradhedlund.s3.amazonaws.com/2011/hadoop-network-intro/Writing-Files-to-HDFS.PNG" alt="Writing File to HDFS"></p>
 
-**The Mapper** - Often used to parse, filter, or transform the data.
+<h3>
+<a id="hdfs-namenode-availability" class="anchor" href="#hdfs-namenode-availability" aria-hidden="true"><span class="octicon octicon-link"></span></a>HDFS NameNode availability</h3>
 
--Input: "key/value" pair.
+<p>NameNode daemon must be running at all times. If NameNode stops, cluster become inaccessible.</p>
 
--Output: A list of zero or more "key/value" pairs.
+<h3>
+<a id="how-to-access-hdfs" class="anchor" href="#how-to-access-hdfs" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to access HDFS?</h3>
 
-1. Each Map task (typically) operates on a single "HDFS" block.
-1. Map tasks (usually) run on the node where the block of file or data is stored.
+<ul>
+<li>FsShell Command line : hadoop fs</li>
+<li>JAVA API</li>
+<li>Ecosystem Projects
+Flume -  Collect data from network sources e.g System logs.
+Sqoop -  Transfers data between HDFS and RDBMS.
+Hue - Web based interactive UI. Can"browse,"upload," download,"and"view"files".</li>
+</ul>
 
-**Shuffle and Sort**
+<h2>
+<a id="mapreduce" class="anchor" href="#mapreduce" aria-hidden="true"><span class="octicon octicon-link"></span></a>MapReduce</h2>
 
-1. Sorts and consolidates intermediate data from all mappers.
-1. Happens after all Map tasks are complete and before Reduce tasks start. 
+<p>MapReduce is a method of distributing a task over multiple nodes. Each node is responsible to process data stored on that node. It consist of 2 phases:</p>
 
-**The Reducer** - Often aggregate data using statistical functions.
+<ol>
+<li>Map</li>
+<li>Reduce</li>
+</ol>
 
--Input: Output of a Mapper.
+<h3>
+<a id="features-of-mapreduce" class="anchor" href="#features-of-mapreduce" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features of MapReduce</h3>
 
--Output: Zero or more final "key/value" pairs. These are written to HDFS.
+<ol>
+<li>Automatic parallelization and distribution.</li>
+<li>Fault tolerance.</li>
+<li>A clean abstraction for programmers. MapReduce "programs" are usually written in Java but can be written in any language 
+using <strong>"Hadoop Streaming"</strong>. All of Hadoop is written in Java.</li>
+<li>It makes Developer can simply concentrate on writing the "Map" and "Reduce" functions.</li>
+</ol>
 
-1. Operates on shuffled/sorted intermediate data Map task output.
-1. Produces final output.
+<h3>
+<a id="mapreduce-stages" class="anchor" href="#mapreduce-stages" aria-hidden="true"><span class="octicon octicon-link"></span></a>MapReduce Stages</h3>
+
+<p><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQmycmzO1vsDSut2tZvZ4v9UIjjJ7B5dr4-f9E1yXUqnH6EpdiwjQ" alt="MapReduce Stages"></p>
+
+<p><strong>The Mapper</strong> - Often used to parse, filter, or transform the data.</p>
+
+<p>-Input: "key/value" pair.</p>
+
+<p>-Output: A list of zero or more "key/value" pairs.</p>
+
+<ol>
+<li>Each Map task (typically) operates on a single "HDFS" block.</li>
+<li>Map tasks (usually) run on the node where the block of file or data is stored.</li>
+</ol>
+
+<p><strong>Shuffle and Sort</strong></p>
+
+<ol>
+<li>Sorts and consolidates intermediate data from all mappers.</li>
+<li>Happens after all Map tasks are complete and before Reduce tasks start. </li>
+</ol>
+
+<p><strong>The Reducer</strong> - Often aggregate data using statistical functions.</p>
+
+<p>-Input: Output of a Mapper.</p>
+
+<p>-Output: Zero or more final "key/value" pairs. These are written to HDFS.</p>
+
+<ol>
+<li>Operates on shuffled/sorted intermediate data Map task output.</li>
+<li>Produces final output.</li>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Hadoop-Components maintained by <a href="https://github.com/arpitaggarwal">arpitaggarwal</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

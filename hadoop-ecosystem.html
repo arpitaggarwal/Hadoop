@@ -1,49 +1,127 @@
-##Hadoop Ecosystem
+<!DOCTYPE html>
+<html>
 
-![Hadoop Ecosystem](http://thebigdatablog.weebly.com/uploads/3/2/3/2/32326475/87375_orig.jpg)
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Hadoop Ecosystem : Hadoop Ecosystem">
 
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-Most Hadoop Ecosystem Projects are Apache projects or Apache Incubator projects and may be:
-* Built on HDFS and MapReduce - Pig, Hive.
-* Built on just HDFS - Impala by Cloudera.
-* Designed to integrate with or support Hadoop.
+    <title>Hadoop Ecosystem</title>
+  </head>
 
-###Hive and Pig
-* Both languages are used for querying and manipulating data.
-* Interpreter runs on a client machine.
-* Turns queries to MapReduce jobs, which is further submitted to cluster.
+  <body>
 
-**Hive** - It's similar to SQL.
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/arpitaggarwal/Hadoop-Ecosystem">View on GitHub</a>
 
-**Pig** - It's dataflow scripting language.
+          <h1 id="project_title">Hadoop Ecosystem</h1>
+          <h2 id="project_tagline">Hadoop Ecosystem</h2>
 
-###Impala
-* High performance SQL engine for vast amounts of data.
-* Similar query language to "HiveQL".
-* 10 to 50+ times faster than Hive, Pig, or MapReduce as it runs directly on Hadoop clusters and do not use MapReduce.
-* Use data stored in HDFS.
-* It's developed by Cloudera and 100%"open source, released under the  Apache software license.
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/arpitaggarwal/Hadoop-Ecosystem/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/arpitaggarwal/Hadoop-Ecosystem/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-###Flume
-* Flume imports data into HDFS as it is generated usually log files from a Web Server, instead of batch processing it later.
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a id="hadoop-ecosystem" class="anchor" href="#hadoop-ecosystem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hadoop Ecosystem</h2>
 
-###Sqoop - "SQL to Hadoop"
-* Sqoo transfers data between RDBMS and HDFS. It does this very efficiently via a Map/only MapReduce job.
-* It supports JDBC, ODBC, and several specific databases.
+<p><img src="http://thebigdatablog.weebly.com/uploads/3/2/3/2/32326475/87375_orig.jpg" alt="Hadoop Ecosystem"></p>
 
+<p>Most Hadoop Ecosystem Projects are Apache projects or Apache Incubator projects and may be:</p>
 
-###OOzie
-* It's a workflow engine for MapReduce jobs and also defines dependencies between jobs.
-* Oozie server submits the jobs to the server in the correct sequence.
+<ul>
+<li>Built on HDFS and MapReduce - Pig, Hive.</li>
+<li>Built on just HDFS - Impala by Cloudera.</li>
+<li>Designed to integrate with or support Hadoop.</li>
+</ul>
 
-###HBase
-* HBase is the Hadoop column oriented database.
-* Its a "NoSQL" datastore and can store massive amount of data.
-* have high write throughput and scale to hundreds of thousands o inserts per second.
-* Handles sparse data well with no wasted spaces for empty columns in a row.
-* It have a limited access model and optimized for lookup of a row by key rather than full queries.
-* No support for transactions - Single row operations only.
+<h3>
+<a id="hive-and-pig" class="anchor" href="#hive-and-pig" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hive and Pig</h3>
 
-###Mahout - An Elephant Rider
-* Mahout is a Machine Learning library written in Java.
-* Used for Collaborative filtering (recommendations), Clustering (finding naturally occurring groupings in data), Classification (determining whether new data fits a category).
+<ul>
+<li>Both languages are used for querying and manipulating data.</li>
+<li>Interpreter runs on a client machine.</li>
+<li>Turns queries to MapReduce jobs, which is further submitted to cluster.</li>
+</ul>
+
+<p><strong>Hive</strong> - It's similar to SQL.</p>
+
+<p><strong>Pig</strong> - It's dataflow scripting language.</p>
+
+<h3>
+<a id="impala" class="anchor" href="#impala" aria-hidden="true"><span class="octicon octicon-link"></span></a>Impala</h3>
+
+<ul>
+<li>High performance SQL engine for vast amounts of data.</li>
+<li>Similar query language to "HiveQL".</li>
+<li>10 to 50+ times faster than Hive, Pig, or MapReduce as it runs directly on Hadoop clusters and do not use MapReduce.</li>
+<li>Use data stored in HDFS.</li>
+<li>It's developed by Cloudera and 100%"open source, released under the  Apache software license.</li>
+</ul>
+
+<h3>
+<a id="flume" class="anchor" href="#flume" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flume</h3>
+
+<ul>
+<li>Flume imports data into HDFS as it is generated usually log files from a Web Server, instead of batch processing it later.</li>
+</ul>
+
+<h3>
+<a id="sqoop---sql-to-hadoop" class="anchor" href="#sqoop---sql-to-hadoop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sqoop - "SQL to Hadoop"</h3>
+
+<ul>
+<li>Sqoo transfers data between RDBMS and HDFS. It does this very efficiently via a Map/only MapReduce job.</li>
+<li>It supports JDBC, ODBC, and several specific databases.</li>
+</ul>
+
+<h3>
+<a id="oozie" class="anchor" href="#oozie" aria-hidden="true"><span class="octicon octicon-link"></span></a>OOzie</h3>
+
+<ul>
+<li>It's a workflow engine for MapReduce jobs and also defines dependencies between jobs.</li>
+<li>Oozie server submits the jobs to the server in the correct sequence.</li>
+</ul>
+
+<h3>
+<a id="hbase" class="anchor" href="#hbase" aria-hidden="true"><span class="octicon octicon-link"></span></a>HBase</h3>
+
+<ul>
+<li>HBase is the Hadoop column oriented database.</li>
+<li>Its a "NoSQL" datastore and can store massive amount of data.</li>
+<li>have high write throughput and scale to hundreds of thousands o inserts per second.</li>
+<li>Handles sparse data well with no wasted spaces for empty columns in a row.</li>
+<li>It have a limited access model and optimized for lookup of a row by key rather than full queries.</li>
+<li>No support for transactions - Single row operations only.</li>
+</ul>
+
+<h3>
+<a id="mahout---an-elephant-rider" class="anchor" href="#mahout---an-elephant-rider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mahout - An Elephant Rider</h3>
+
+<ul>
+<li>Mahout is a Machine Learning library written in Java.</li>
+<li>Used for Collaborative filtering (recommendations), Clustering (finding naturally occurring groupings in data), Classification (determining whether new data fits a category).</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Hadoop Ecosystem maintained by <a href="https://github.com/arpitaggarwal">arpitaggarwal</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

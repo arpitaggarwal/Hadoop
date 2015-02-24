@@ -1,0 +1,82 @@
+![Hadoop Ecosystem](http://social.technet.microsoft.com/wiki/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-05/7848.TheHadoopEcosystem.png?raw=true?raw=true)
+
+**HDFS** - Stores data on the cluster.
+
+**MapReduce** - Processes data on the cluster. 
+
+###Hadoop Cluster
+A group of machines working together to store and process data. It can have any number of "slave" or "worker" nodes with 2 master nodes:
+
+1. Name Node - Manages HDFS.
+1. Job Tracker - Manages MapReduce.
+
+![Hadoop Cluster](http://www.ibm.com/developerworks/library/bd-hadoopyarn/figure1.png)
+
+
+##HDFS?
+1. HDFS is a filesystem written in Java.
+1. It's based on Google File System.
+1. Sits on native filesystem such as ext3, ext4 or xfs.
+1. Provides redundant storage for massive amounts of data. 
+1. It performs best with a "modest" number of large files. Each file typically 100MB or more.
+1. Files in HDFS are "write once" - No random rights to file are allowed.
+1. It is optimized for large, streaming reads of files, rather than random reads.
+
+###How files are stored?
+
+Each data file is splitted into block on multiple nodes at data load time. Each block is replicated on multiple nodes (DataNode) default 3x and NameNode is used to store metadata.
+
+![Writing File to HDFS](http://bradhedlund.s3.amazonaws.com/2011/hadoop-network-intro/Writing-Files-to-HDFS.PNG)
+
+
+###HDFS NameNode availability
+NameNode daemon must be running at all times. If NameNode stops, cluster become inaccessible.
+
+###How to access HDFS?
+
+* FsShell Command line : hadoop fs
+* JAVA API
+* Ecosystem Projects
+    Flume -  Collect data from network sources e.g System logs.
+    Sqoop -  Transfers data between HDFS and RDBMS.
+    Hue - Web based interactive UI. Can"browse,"upload," download,"and"view"files".
+
+##MapReduce
+MapReduce is a method of distributing a task over multiple nodes. Each node is responsible to process data stored on that node. It consist of 2 phases:
+
+1. Map
+1. Reduce
+
+###Features of MapReduce
+1. Automatic parallelization and distribution.
+1. Fault tolerance.
+1. A clean abstraction for programmers. MapReduce "programs" are usually written in Java but can be written in any language 
+   using **"Hadoop Streaming"**. All of Hadoop is written in Java.
+1. It makes Developer can simply concentrate on writing the "Map" and "Reduce" functions.
+
+###MapReduce Stages
+
+![MapReduce Stages](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQmycmzO1vsDSut2tZvZ4v9UIjjJ7B5dr4-f9E1yXUqnH6EpdiwjQ)
+
+**The Mapper** - Often used to parse, filter, or transform the data.
+
+-Input: "key/value" pair.
+
+-Output: A list of zero or more "key/value" pairs.
+
+1. Each Map task (typically) operates on a single "HDFS" block.
+1. Map tasks (usually) run on the node where the block of file or data is stored.
+
+**Shuffle and Sort**
+
+1. Sorts and consolidates intermediate data from all mappers.
+1. Happens after all Map tasks are complete and before Reduce tasks start. 
+
+**The Reducer** - Often aggregate data using statistical functions.
+
+-Input: Output of a Mapper.
+
+-Output: Zero or more final "key/value" pairs. These are written to HDFS.
+
+1. Operates on shuffled/sorted intermediate data Map task output.
+1. Produces final output.

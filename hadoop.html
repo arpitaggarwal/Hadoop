@@ -63,31 +63,6 @@ tasks to different node. As data is replicated on multiple nodes so no loss of d
 join cluster automatically.</li>
 </ul>
 
-<h2>
-<a id="what-is-hadoop" class="anchor" href="#what-is-hadoop" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Hadoop?</h2>
-
-<p>Apache Hadoop is a set of algorithms (an open-source software framework written in Java) for distributed storage and distributed processing of very large data sets (Big Data) on computer clusters built from commodity hardware. All the modules in Hadoop are designed with a fundamental assumption that hardware failures (of individual machines, or racks of machines) are commonplace and thus should be automatically handled in software by the framework.</p>
-
-<p>The core of Apache Hadoop consists of a storage part (Hadoop Distributed File System (HDFS)) and a processing part (MapReduce). </p>
-
-<p>Hadoop splits files into large blocks (default 64MB or 128MB) and distributes the blocks amongst the nodes in the cluster. To process the data, Hadoop Map/Reduce transfers code (specifically Jar files) to nodes that have the required data, which the nodes then process in parallel. This approach takes advantage of data locality to allow the data to be processed faster and more efficiently via distributed processing than by using a more conventional supercomputer architecture that relies on a parallel file system where computation and data are connected via high-speed networking.</p>
-
-<p>The Hadoop framework itself is mostly written in the Java programming language, with some native code in C and command line utilities written as shell-scripts. For end-users, though MapReduce Java code is common, any programming language can be used with "Hadoop Streaming" to implement the "map" and "reduce" parts of the user's program.[11] Other related projects expose other higher level user interfaces.</p>
-
-<p>The base Apache Hadoop framework is composed of the following modules:</p>
-
-<ul>
-<li>
-<strong>Hadoop Common</strong> – contains libraries and utilities needed by other Hadoop modules.</li>
-<li>
-<strong>Hadoop Distributed File System (HDFS)</strong> – a distributed file-system that stores data on commodity machines, providing very high aggregate bandwidth across the cluster.</li>
-<li>
-<strong>Hadoop YARN</strong> – a resource-management platform responsible for managing compute resources in clusters and using them for scheduling of users' applications.</li>
-<li>
-<strong>Hadoop MapReduce</strong> – a programming model for large scale data processing.</li>
-</ul>
-
-<h2>
 <a id="hadoop-architecture" class="anchor" href="#hadoop-architecture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hadoop Architecture</h2>
 
 <p>Hadoop consists of the Hadoop Common package, which provides filesystem and OS level abstractions, a MapReduce engine (either MapReduce/MR1 or YARN/MR2) and the Hadoop Distributed File System (HDFS). The Hadoop Common package contains the necessary Java ARchive (JAR) files and scripts needed to start Hadoop. The package also provides source code, documentation, and a contribution section that includes projects from the Hadoop Community.</p>
